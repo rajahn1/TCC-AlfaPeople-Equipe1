@@ -14,15 +14,9 @@ Logistics.Conta = {
                 var response = JSON.parse(xhttp.responseText);
                 return response;
             } else {
-                const alertStrings = { confirmButtonLabel: "Ok", text: "Erro ao buscar CEP", title: "Erro" };
-                const alertOptions = { height: 120, width: 260 };
-                Xrm.Navigation.openAlertDialog(alertStrings, alertOptions)
                 return null;
             }
         } catch (error) {
-            const alertStrings = { confirmButtonLabel: "Ok", text: `Erro ao fazer requisição com API externa VIACEP: ${error}`, title: "Erro" };
-            const alertOptions = { height: 120, width: 260 };
-            Xrm.Navigation.openAlertDialog(alertStrings, alertOptions)
             return null;
         }
     },
@@ -45,7 +39,7 @@ Logistics.Conta = {
 
         (async() => {
             const CEPData = await(Logistics.Conta.fetchCEPData(CEPValue));
-            
+
             if (!CEPData) {
                 formContext.getAttribute(schemaNames.estado).setValue("");
                 formContext.getAttribute(schemaNames.cidade).setValue("");
