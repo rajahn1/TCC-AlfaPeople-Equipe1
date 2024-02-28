@@ -19,5 +19,6 @@ Logistics.Conta.CNPJ = {
             formContext.getAttribute("cr192_cnpj").setValue(null);
             Logistics.Util.Alerta("Atencao!", "CNPJ inválido!");
         }
+    }
 
 }
