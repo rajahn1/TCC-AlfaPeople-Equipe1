@@ -3,17 +3,6 @@ if (typeof (Logistics.Validator) === "undefined") Logistics.Validator = {};
 
 Logistics.Validator = {
 
-    OnChangeNomeDaConta: function (context) {
-        const formContext = context.getFormContext();
-        let nome = formContext.getAttribute("name").getValue();
-
-        if (nome) {
-            let rgx = "/(\b[a-z](?!\s))/g";
-            let nomeFormatado = nome.toLowerCase().replace(rgx, function (x) { return x.toUpperCase(); });
-            formContext.getAttribute("name").setValue(nomeFormatado);
-        }
-    },
-
     // recebe um string com o CNPJ e retorna true se for valido
     VerificaCNPJ: function(cnpj) {
         // constantes para calculo do modulo 11
