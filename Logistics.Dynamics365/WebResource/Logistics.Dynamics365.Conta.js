@@ -42,6 +42,17 @@ Logistics.Conta = {
         }
     },
 
+    OnLoadOpportunity: function (context) {
+        const formContext = context.getFormContext();
+        const isIntegrated = formContext.getAttribute("log_integrado").getValue();
+        const controls = formContext.ui.controls.get();
+        if (isIntegrated) {
+            for (let i in controls){
+                controls[i].setDisabled(true);
+            }
+        }
+    },
+
     fetchCEPData: async function (CEP) {
         try {
             var xhttp = new XMLHttpRequest();
@@ -101,5 +112,6 @@ Logistics.Conta = {
                 formContext.getAttribute(schemaNames.DDD).setValue(ddd);
             }
         })();
-    }
+    },
+
 }

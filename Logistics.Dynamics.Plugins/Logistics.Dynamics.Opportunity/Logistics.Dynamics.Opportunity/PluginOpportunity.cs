@@ -17,7 +17,7 @@ namespace Logistics.Dynamics.Opportunity
                 IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
 
                 Managers.OpportunityManager opportunityManager = new Managers.OpportunityManager();
-                opportunityManager.CreateOpportunityID(context, service);
+                opportunityManager.CreateOpportunity(context, service);
             }
 
         }
