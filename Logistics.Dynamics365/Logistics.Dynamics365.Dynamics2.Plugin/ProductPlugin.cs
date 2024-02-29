@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 
 namespace Logistics.Dynamics365.Dynamics2.Plugin
 {
@@ -16,7 +17,18 @@ namespace Logistics.Dynamics365.Dynamics2.Plugin
             IOrganizationService organizationService = serviceFactory.CreateOrganizationService(context.UserId);
             ITracingService trace = (ITracingService)serviceProvider.GetService (typeof(ITracingService));
 
-            trace.Trace("Adicionando conta");
+            trace.Trace("Barrando criar produto");
+            // Verifica se é uma operação de criação de produto
+            if (context.MessageName.ToLower() == "create" && context.InputParameters.Contains("Target") && context.InputParameters["Target"] is Entity)
+            {
+                Entity product = (Entity)context.InputParameters["Target"];
+
+                // Verifica se é a entidade de produto
+                if (product.LogicalName.ToLower() == "product")
+                {
+                    throw new InvalidPluginExecutionException("Você não tem permissão para criar produtos.");
+                }
+            }
         }
     }
 }
