@@ -1,0 +1,4 @@
+C:\Users\lucas\source\repos\Logistics.Dynamics365.EX1\Logistics.Dynamics365.EX1\obj\Debug\Logistics.Dynamics365.EX1.csproj.AssemblyReference.cache
+C:\Users\lucas\source\repos\Logistics.Dynamics365.EX1\Logistics.Dynamics365.EX1\obj\Debug\Logistics.Dynamics365.EX1.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Logistics.Dynamics365.EX1\Logistics.Dynamics365.EX1\obj\Debug\Logistics.Dynamics365.EX1.dll
+C:\Users\lucas\source\repos\Logistics.Dynamics365.EX1\Logistics.Dynamics365.EX1\obj\Debug\Logistics.Dynamics365.EX1.pdb
